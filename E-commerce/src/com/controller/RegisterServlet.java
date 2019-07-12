@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.service.SignIn;
+
 
 @WebServlet("/RegisterServlet")
 public class RegisterServlet extends HttpServlet {
@@ -21,7 +23,7 @@ public class RegisterServlet extends HttpServlet {
 			String customerName=request.getParameter("customerName");
 			String email=request.getParameter("email");
 			String password=request.getParameter("password");
-			String passwordCheck =request.getParameter("passwordCheck");
+			SignIn.registerUser(email, password);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
